@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BO Foods</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff0000, #ffcc00);
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .launch-btn {
+      padding: 20px 40px;
+      font-size: 1.8rem;
+      background: #fff;
+      color: #ff0000;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .launch-btn:hover {
+      background: #ffcc00;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .countdown {
+      font-size: 5rem;
+      display: none;
+      font-weight: bold;
+      animation: pop 1s ease-in-out infinite;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍴 Welcome to BO Foods 🍴</h1>
+    <button class="launch-btn" onclick="startCountdown()">LAUNCH WEBSITE</button>
+    <div id="countdown" class="countdown"></div>
+  </div>
+
+  <script>
+    function startCountdown() {
+      document.querySelector(".launch-btn").style.display = "none";
+      let countdownEl = document.getElementById("countdown");
+      countdownEl.style.display = "block";
+
+      let count = 3;
+      countdownEl.textContent = count;
+
+      let interval = setInterval(() => {
+        count--;
+        if (count > 0) {
+          countdownEl.textContent = count;
+        } else {
+          clearInterval(interval);
+          countdownEl.textContent = "🚀";
+          setTimeout(() => {
+            window.location.href = "https://bhimavaram.online/";
+          }, 1000);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
