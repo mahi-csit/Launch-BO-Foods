@@ -9,6 +9,7 @@
       margin: 0;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       font-family: "Poppins", sans-serif;
@@ -17,12 +18,11 @@
     }
 
     h1 {
-      position: absolute;
-      top: 10%;
       font-size: 3.5rem;
       color: white;
       text-shadow: 2px 2px 15px rgba(0,0,0,0.6);
       animation: fadeIn 2s ease;
+      margin-bottom: 40px;
     }
 
     .launch-btn {
@@ -37,9 +37,20 @@
       box-shadow: 0 0 30px rgba(255,0,0,0.6);
       transition: 0.3s;
     }
+
     .launch-btn:hover {
       transform: scale(1.1);
       box-shadow: 0 0 50px rgba(255,255,0,0.8);
+    }
+
+    /* Logo */
+    .logo {
+      margin-top: 30px;
+      width: 180px;
+      height: auto;
+      display: block;
+      animation: fadeIn 2s ease;
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
     }
 
     /* Countdown Modal */
@@ -94,6 +105,9 @@
 <body>
   <h1>🍴 Welcome to BO Foods 🍴</h1>
   <button class="launch-btn" onclick="openCountdown()">LAUNCH WEBSITE</button>
+
+  <!-- Logo Below Button -->
+  <img src="logo.png" alt="BO Foods Logo" class="logo">
 
   <div class="modal" id="modal">
     <div id="countdown" class="countdown"></div>
